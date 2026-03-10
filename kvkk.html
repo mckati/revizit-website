@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KVKK Aydınlatma Metni — Revizit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0c; --surface: #141414; --border: rgba(255,255,255,0.08);
+      --text: #f0ece4; --muted: #8a8078; --accent: #D4956A; --accent-dim: rgba(212,149,106,0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Lora', Georgia, serif; font-size: 15px; line-height: 1.85; min-height: 100vh; }
+    .topbar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+    .topbar-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--accent); letter-spacing: 0.04em; text-decoration: none; }
+    .topbar-back { font-size: 13px; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .topbar-back:hover { color: var(--accent); }
+    .hero { background: linear-gradient(180deg, rgba(212,149,106,0.06) 0%, transparent 100%); border-bottom: 1px solid var(--border); padding: 56px 24px 40px; text-align: center; }
+    .hero-tag { display: inline-block; background: var(--accent-dim); border: 1px solid rgba(212,149,106,0.25); color: var(--accent); border-radius: 100px; padding: 5px 16px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 5vw, 40px); font-weight: 600; line-height: 1.2; margin-bottom: 12px; }
+    .hero-meta { font-size: 13px; color: var(--muted); }
+    .container { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 48px; }
+    .toc h3 { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--accent); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 7px; }
+    .toc a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .toc a:hover { color: var(--accent); }
+    section { margin-bottom: 48px; }
+    section h2 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--text); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--border); display: flex; gap: 10px; align-items: baseline; }
+    .num { color: var(--accent); font-size: 14px; font-weight: 400; min-width: 22px; }
+    section h3 { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--accent); margin: 22px 0 10px; }
+    p { color: #c8c0b4; margin-bottom: 14px; }
+    ul, ol.body-list { padding-left: 20px; margin-bottom: 14px; }
+    li { color: #c8c0b4; margin-bottom: 8px; }
+    .info-box { background: var(--accent-dim); border: 1px solid rgba(212,149,106,0.2); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+    .info-box strong { display: block; color: var(--accent); font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 8px; }
+    .info-box p { margin: 0; font-size: 14px; }
+    .contact-box { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; margin-top: 16px; }
+    .contact-row { display: flex; gap: 10px; margin-bottom: 10px; align-items: flex-start; }
+    .c-label { color: var(--muted); font-size: 13px; min-width: 110px; padding-top: 1px; flex-shrink: 0; }
+    .c-val { color: var(--text); font-size: 14px; }
+    .c-val a { color: var(--accent); text-decoration: none; }
+    strong { color: #e8e0d4; }
+    .footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+    .footer p { font-size: 13px; color: var(--muted); margin: 0 0 12px; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover, .footer-links a.active { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="https://www.revizit.com.tr" class="topbar-logo">Revizit</a>
+  <a href="https://app.revizit.com.tr/register.html" class="topbar-back">← Uygulamaya Dön</a>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">Yasal Bilgilendirme</div>
+  <h1>Kişisel Verilerin Korunması<br>Aydınlatma Metni</h1>
+  <p class="hero-meta">Son güncelleme: [GÜN AY YIL] &nbsp;·&nbsp; 6698 sayılı KVKK kapsamında hazırlanmıştır.</p>
+</div>
+
+<div class="container">
+
+  <div class="toc">
+    <h3>İçindekiler</h3>
+    <ol>
+      <li><a href="#veri-sorumlusu">Veri Sorumlusu</a></li>
+      <li><a href="#toplanan-veriler">Toplanan Kişisel Veriler</a></li>
+      <li><a href="#isleme-amaclari">İşleme Amaçları ve Hukuki Dayanaklar</a></li>
+      <li><a href="#aktarim">Kişisel Verilerin Aktarımı</a></li>
+      <li><a href="#saklama">Saklama ve İmha</a></li>
+      <li><a href="#haklar">İlgili Kişinin Hakları</a></li>
+      <li><a href="#basvuru">Başvuru Yöntemleri</a></li>
+    </ol>
+  </div>
+
+  <section id="veri-sorumlusu">
+    <h2><span class="num">1</span>Veri Sorumlusu</h2>
+    <p>İşbu Aydınlatma Metni; 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") ve ilgili mevzuat uyarınca, Revizit sadakat platformu ("Platform") aracılığıyla sunulan hizmetler kapsamında kişisel verilerinizi işleyen veri sorumlusu tarafından hazırlanmıştır.</p>
+    <div class="contact-box">
+      <div class="contact-row">
+        <span class="c-label">Şirket Unvanı</span>
+        <span class="c-val">[ŞİRKET UNVANI]</span>
+      </div>
+      <div class="contact-row">
+        <span class="c-label">Adres</span>
+        <span class="c-val">[ŞİRKET ADRESİ]</span>
+      </div>
+      <div class="contact-row">
+        <span class="c-label">E-posta</span>
+        <span class="c-val"><a href="mailto:kvkk@revizit.com.tr">kvkk@revizit.com.tr</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="c-label">Telefon</span>
+        <span class="c-val">[TELEFON NUMARASI]</span>
+      </div>
+    </div>
+  </section>
+
+  <section id="toplanan-veriler">
+    <h2><span class="num">2</span>Toplanan Kişisel Veriler</h2>
+    <p>Revizit, veri minimizasyonu ilkesini benimsemektedir. Platform aracılığıyla yalnızca aşağıda belirtilen kişisel veriler işlenmektedir:</p>
+
+    <h3>Sadakat Programı Kaydı Sırasında</h3>
+    <ul>
+      <li><strong>İletişim verisi:</strong> Cep telefonu numarası</li>
+    </ul>
+
+    <h3>Ziyaret ve Program Kullanımı Sırasında</h3>
+    <ul>
+      <li><strong>İşlem verisi:</strong> Ziyaret tarihleri ve sıklığı, döngü ilerlemesi, kazanılan ödül bilgisi</li>
+      <li><strong>İşlem güvenliği verisi:</strong> Anonim QR token kullanım kayıtları</li>
+    </ul>
+
+    <div class="info-box">
+      <strong>Önemli Not</strong>
+      <p>Revizit; ad-soyad, e-posta adresi, kimlik numarası, ödeme bilgisi veya konum verisi toplamamaktadır. Platform üzerinden herhangi bir finansal işlem gerçekleştirilmemektedir.</p>
+    </div>
+  </section>
+
+  <section id="isleme-amaclari">
+    <h2><span class="num">3</span>İşleme Amaçları ve Hukuki Dayanaklar</h2>
+    <p>Kişisel verileriniz aşağıdaki amaçlar ve KVKK'nın 5. maddesinde belirlenen hukuki sebeplere dayanılarak işlenmektedir:</p>
+
+    <h3>Sadakat Programının Yürütülmesi</h3>
+    <p>Üyelik kaydının oluşturulması, ziyaretlerin takibi, döngü ilerlemesinin ve ödül haklarının hesaplanması amacıyla; KVKK m.5/2-c kapsamında <em>"sözleşmenin kurulması veya ifasıyla doğrudan doğruya ilgili olması"</em> hukuki sebebine dayanılarak işlenmektedir.</p>
+
+    <h3>Müşteri İlişkileri ve Hizmet Kalitesi</h3>
+    <p>Talep ve şikayetlerin karşılanması, hizmet iyileştirme faaliyetlerinin yürütülmesi amacıyla; KVKK m.5/2-f kapsamında <em>"veri sorumlusunun meşru menfaatleri için veri işlenmesinin zorunlu olması"</em> hukuki sebebine dayanılarak işlenmektedir.</p>
+
+    <h3>Hukuki Yükümlülüklerin Yerine Getirilmesi</h3>
+    <p>Yasal düzenlemeler gereği yetkili kişi ve kurumlarla bilgi paylaşımı amacıyla; KVKK m.5/2-ç kapsamında <em>"veri sorumlusunun hukuki yükümlülüğünü yerine getirebilmesi"</em> hukuki sebebine dayanılarak işlenmektedir.</p>
+
+    <h3>Ticari Elektronik İleti Gönderimi (İsteğe Bağlı)</h3>
+    <p>Açık rızanızın bulunması halinde; ödül bildirimleri, kampanya duyuruları gibi ticari elektronik iletilerin gönderilmesi amacıyla KVKK m.5/1 kapsamında <em>"ilgili kişinin açık rızası"</em> hukuki sebebine dayanılarak işlenmektedir. Bu onayı dilediğiniz zaman geri alabilirsiniz.</p>
+  </section>
+
+  <section id="aktarim">
+    <h2><span class="num">4</span>Kişisel Verilerin Aktarımı</h2>
+    <p>Kişisel verileriniz aşağıdaki taraflarla KVKK'nın 8. ve 9. maddelerindeki kurallara uygun biçimde paylaşılabilmektedir:</p>
+
+    <h3>Hizmet Aldığımız Teknoloji Tedarikçileri</h3>
+    <p>Platform'un teknik altyapısını sağlayan Supabase Inc. (veritabanı ve kimlik doğrulama hizmetleri) ile çalışılmaktadır. Veriler, KVKK m.9 kapsamında standart sözleşme imzalanması yoluyla yurt dışına aktarılmaktadır. Aktarım; yalnızca hizmetin ifası için gerekli olan verilerle ve gerekli teknik güvenlik önlemleri alınarak gerçekleştirilmektedir.</p>
+
+    <h3>SMS Hizmet Sağlayıcısı (İleride)</h3>
+    <p>Ticari elektronik ileti gönderimi kapsamında SMS hizmeti alınan tedarikçilerle (Netgsm veya muadili) yalnızca iletişim bilgisi paylaşılacaktır.</p>
+
+    <h3>Yasal Zorunluluk Halinde</h3>
+    <p>Yürürlükteki mevzuat gereği, yetkili kamu kurumları ve adli makamlarla zorunlu hallerde bilgi paylaşılabilmektedir.</p>
+
+    <div class="info-box">
+      <strong>Güvence</strong>
+      <p>Verileriniz hiçbir koşulda reklam, pazarlama veya veri ticareti amacıyla üçüncü taraflara satılmaz veya kiralanmaz.</p>
+    </div>
+  </section>
+
+  <section id="saklama">
+    <h2><span class="num">5</span>Saklama ve İmha</h2>
+    <p>Kişisel verileriniz, işlenme amacının gerektirdiği süre boyunca ve ilgili mevzuatta öngörülen saklama sürelerine uygun olarak muhafaza edilmektedir.</p>
+
+    <h3>Saklama Süreleri</h3>
+    <ul>
+      <li><strong>Üyelik verileri:</strong> Üyelik aktif olduğu sürece saklanır.</li>
+      <li><strong>Ziyaret kayıtları:</strong> Son ziyaretten itibaren 3 yıl saklanır.</li>
+      <li><strong>Hukuki uyuşmazlık halleri:</strong> İlgili davanın kesinleşmesinden itibaren 10 yıl.</li>
+    </ul>
+
+    <h3>İmha</h3>
+    <p>Saklama süresi dolan veya silinme talebi geçerli bulunan veriler, en geç 30 gün içinde silinir, yok edilir ya da anonimleştirilir. Mevzuattan kaynaklanan saklama yükümlülüğü devam eden veriler, talep üzerine bu süre sonunda imha edilir.</p>
+
+    <p>Üyeliğinizi sonlandırmak ya da verilerinizin silinmesini talep etmek için aşağıdaki iletişim kanallarını kullanabilirsiniz.</p>
+  </section>
+
+  <section id="haklar">
+    <h2><span class="num">6</span>İlgili Kişinin Hakları</h2>
+    <p>KVKK'nın 11. maddesi uyarınca aşağıdaki haklara sahipsiniz:</p>
+    <ul>
+      <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme,</li>
+      <li>İşlenmişse buna ilişkin bilgi talep etme,</li>
+      <li>Kişisel verilerin işlenme amacını ve amaca uygun kullanılıp kullanılmadığını öğrenme,</li>
+      <li>Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri öğrenme,</li>
+      <li>Eksik veya yanlış işlenmiş olması halinde düzeltilmesini talep etme,</li>
+      <li>KVKK'da öngörülen şartlar çerçevesinde silinmesini veya yok edilmesini talep etme,</li>
+      <li>Düzeltme ve silme işlemlerinin aktarılan üçüncü kişilere bildirilmesini talep etme,</li>
+      <li>Münhasıran otomatik sistemlerle analiz sonucunda aleyhinize çıkan kararlar varsa itiraz etme,</li>
+      <li>Kanuna aykırı işleme nedeniyle zarara uğramanız halinde giderilmesini talep etme.</li>
+    </ul>
+  </section>
+
+  <section id="basvuru">
+    <h2><span class="num">7</span>Başvuru Yöntemleri</h2>
+    <p>Yukarıda belirtilen haklarınıza ilişkin taleplerinizi aşağıdaki kanallardan iletebilirsiniz. Başvurunuzda; adınız-soyadınız, iletişim bilginiz ve talep konunuzun açıkça belirtilmesi gerekmektedir.</p>
+
+    <div class="contact-box">
+      <div class="contact-row">
+        <span class="c-label">E-posta</span>
+        <span class="c-val"><a href="mailto:kvkk@revizit.com.tr">kvkk@revizit.com.tr</a></span>
+      </div>
+      <div class="contact-row">
+        <span class="c-label">Posta</span>
+        <span class="c-val">[ŞİRKET ADRESİ] — "KVKK Başvurusu" ibaresiyle</span>
+      </div>
+      <div class="contact-row">
+        <span class="c-label">Bizzat Başvuru</span>
+        <span class="c-val">Geçerli kimlik belgesiyle şirket adresine</span>
+      </div>
+      <div class="contact-row">
+        <span class="c-label">KEP</span>
+        <span class="c-val">[KEP ADRESİ] (varsa)</span>
+      </div>
+    </div>
+
+    <p style="margin-top:20px;">Başvurunuz, ilgili departmana ulaştığı tarihten itibaren en geç <strong>30 gün</strong> içinde yanıtlanacaktır. Talebin reddedilmesi halinde gerekçeli ret kararı tarafınıza iletilir.</p>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <p>© [YIL] Revizit — Tüm hakları saklıdır.</p>
+  <div class="footer-links">
+    <a href="/kvkk.html" class="active">KVKK Aydınlatma</a>
+    <a href="/gizlilik.html">Gizlilik Politikası</a>
+    <a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+    <a href="/ticari-ileti.html">Ticari İleti</a>
+  </div>
+</footer>
+
+</body>
+</html>

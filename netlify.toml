@@ -1,0 +1,19 @@
+[[redirects]]
+  from = "/kvkk"
+  to = "/kvkk.html"
+  status = 200
+
+[[redirects]]
+  from = "/gizlilik"
+  to = "/gizlilik.html"
+  status = 200
+
+[[redirects]]
+  from = "/kullanim-kosullari"
+  to = "/kullanim-kosullari.html"
+  status = 200
+
+[[redirects]]
+  from = "/ticari-ileti"
+  to = "/ticari-ileti.html"
+  status = 200

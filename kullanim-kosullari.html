@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kullanım Koşulları — Revizit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0c; --surface: #141414; --border: rgba(255,255,255,0.08);
+      --text: #f0ece4; --muted: #8a8078; --accent: #D4956A; --accent-dim: rgba(212,149,106,0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Lora', Georgia, serif; font-size: 15px; line-height: 1.85; min-height: 100vh; }
+    .topbar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+    .topbar-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--accent); letter-spacing: 0.04em; text-decoration: none; }
+    .topbar-back { font-size: 13px; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .topbar-back:hover { color: var(--accent); }
+    .hero { background: linear-gradient(180deg, rgba(212,149,106,0.06) 0%, transparent 100%); border-bottom: 1px solid var(--border); padding: 56px 24px 40px; text-align: center; }
+    .hero-tag { display: inline-block; background: var(--accent-dim); border: 1px solid rgba(212,149,106,0.25); color: var(--accent); border-radius: 100px; padding: 5px 16px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 5vw, 40px); font-weight: 600; line-height: 1.2; margin-bottom: 12px; }
+    .hero-meta { font-size: 13px; color: var(--muted); }
+    .container { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 48px; }
+    .toc h3 { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--accent); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 7px; }
+    .toc a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .toc a:hover { color: var(--accent); }
+    section { margin-bottom: 48px; }
+    section h2 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--text); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--border); display: flex; gap: 10px; align-items: baseline; }
+    .num { color: var(--accent); font-size: 14px; font-weight: 400; min-width: 22px; }
+    section h3 { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--accent); margin: 22px 0 10px; }
+    p { color: #c8c0b4; margin-bottom: 14px; }
+    ul { padding-left: 20px; margin-bottom: 14px; }
+    li { color: #c8c0b4; margin-bottom: 8px; }
+    .info-box { background: var(--accent-dim); border: 1px solid rgba(212,149,106,0.2); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+    .info-box strong { display: block; color: var(--accent); font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 8px; }
+    .info-box p { margin: 0; font-size: 14px; }
+    .warn-box { background: rgba(239,68,68,0.06); border: 1px solid rgba(239,68,68,0.2); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+    .warn-box strong { display: block; color: #f87171; font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 8px; }
+    .warn-box p { margin: 0; font-size: 14px; }
+    .cycle-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+    .cycle-table th { background: var(--surface); color: var(--accent); font-family: 'Cormorant Garamond', serif; font-weight: 600; padding: 12px 16px; text-align: left; border-bottom: 1px solid var(--border); }
+    .cycle-table td { padding: 10px 16px; border-bottom: 1px solid var(--border); color: #c8c0b4; }
+    .cycle-table tr:last-child td { border-bottom: none; }
+    strong { color: #e8e0d4; }
+    .footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+    .footer p { font-size: 13px; color: var(--muted); margin: 0 0 12px; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover, .footer-links a.active { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="https://www.revizit.com.tr" class="topbar-logo">Revizit</a>
+  <a href="https://app.revizit.com.tr/register.html" class="topbar-back">← Uygulamaya Dön</a>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">Yasal Bilgilendirme</div>
+  <h1>Üyelik ve Kullanım Koşulları</h1>
+  <p class="hero-meta">Son güncelleme: [GÜN AY YIL] &nbsp;·&nbsp; Platformu kullanarak bu koşulları kabul etmektesiniz.</p>
+</div>
+
+<div class="container">
+
+  <div class="toc">
+    <h3>İçindekiler</h3>
+    <ol>
+      <li><a href="#taraflar">Taraflar ve Tanımlar</a></li>
+      <li><a href="#uyelik">Üyelik Koşulları</a></li>
+      <li><a href="#program">Sadakat Programı Kuralları</a></li>
+      <li><a href="#oduller">Ödüller ve Kullanım</a></li>
+      <li><a href="#yukumlulukler">Üyenin Yükümlülükleri</a></li>
+      <li><a href="#degisiklikler">Program Değişiklikleri</a></li>
+      <li><a href="#sorumluluk">Sorumluluk Sınırlaması</a></li>
+      <li><a href="#uyusmazlik">Uyuşmazlık Çözümü</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+    </ol>
+  </div>
+
+  <section id="taraflar">
+    <h2><span class="num">1</span>Taraflar ve Tanımlar</h2>
+    <p>İşbu Kullanım Koşulları ("Koşullar"); [ŞİRKET UNVANI] ("Revizit" veya "Platform") ile Revizit sadakat programına üye olan gerçek kişi ("Üye") arasında akdedilmiştir. Platform'u kullanmaya başlamakla bu Koşullar'ı okuduğunuzu, anladığınızı ve kabul ettiğinizi beyan etmektesiniz.</p>
+
+    <h3>Tanımlar</h3>
+    <ul>
+      <li><strong>Platform:</strong> app.revizit.com.tr ve revizit.com.tr alan adları üzerinden sunulan Revizit dijital sadakat hizmetinin tamamıdır.</li>
+      <li><strong>İşletme:</strong> Revizit altyapısını kullanan ve üyelerine sadakat programı sunan kafe, restoran veya benzeri mekânlardır.</li>
+      <li><strong>Üye:</strong> Platforma telefon numarasıyla kayıt olarak sadakat programına dahil olan gerçek kişidir.</li>
+      <li><strong>Ziyaret:</strong> Üyenin işletmede bulunan kasiyer ekranındaki QR kodu telefonuyla okutması ile gerçekleşen kayıtlı mekân ziyaretidir.</li>
+      <li><strong>Döngü:</strong> Ödül kazanmak için tamamlanması gereken belirli sayıda ziyaretten oluşan sadakat çevrimi.</li>
+      <li><strong>Ödül:</strong> Döngüyü tamamlayan üyeye işletme tarafından sunulan ücretsiz ürün, indirim veya avantajdır.</li>
+    </ul>
+  </section>
+
+  <section id="uyelik">
+    <h2><span class="num">2</span>Üyelik Koşulları</h2>
+
+    <h3>Kayıt</h3>
+    <p>Platforma üye olabilmek için geçerli bir Türkiye cep telefonu numarasına sahip olmak ve 18 yaşını doldurmuş olmak gerekmektedir. Kayıt sırasında kişisel verilerin işlenmesine ilişkin aydınlatma metni onaylanmalıdır.</p>
+
+    <h3>Üyeliğin Kişiselliği</h3>
+    <p>Üyelik kişiye özeldir ve devredilemez. Her telefon numarası için yalnızca bir üyelik hesabı oluşturulabilir. Birden fazla hesap oluşturulduğunun tespiti halinde hesaplar birleştirilebilir veya fazladan olan hesap silinebilir.</p>
+
+    <h3>Bilgilerin Doğruluğu</h3>
+    <p>Üye, kayıt sırasında verdiği bilgilerin doğruluğundan ve güncelliğinden sorumludur. Hatalı veya başkasına ait telefon numarası girilmesinden doğacak sonuçlar münhasıran üyeye aittir.</p>
+
+    <h3>Üyeliğin Sona Ermesi</h3>
+    <p>Üye; <a href="mailto:destek@revizit.com.tr" style="color:var(--accent)">destek@revizit.com.tr</a> adresine e-posta göndererek dilediği zaman üyeliğini sonlandırabilir. Üyeliğin sona ermesiyle birlikte birikmiş ziyaret sayısı ve kullanılmamış ödül hakları geçersiz hale gelir.</p>
+
+    <div class="warn-box">
+      <strong>Dikkat</strong>
+      <p>Kullanılmamış ödül hakları nakde çevrilemez, başka bir üyeye veya hesaba devredilemez.</p>
+    </div>
+  </section>
+
+  <section id="program">
+    <h2><span class="num">3</span>Sadakat Programı Kuralları</h2>
+
+    <h3>Ziyaret Kaydı</h3>
+    <p>Bir ziyaretin sisteme kaydedilebilmesi için üyenin işletmede fiziksel olarak bulunması ve kasiyer ekranında gösterilen dinamik QR kodu telefonunun kamerası ile okuması gerekmektedir. QR kodları yalnızca o anki mekân ziyareti için geçerlidir; fotoğraf çekerek veya ekran görüntüsü alarak daha sonra kullanılamaz.</p>
+
+    <h3>Döngü Mekanizması</h3>
+    <p>Sadakat programı iki aşamalı bir döngü üzerine kuruludur:</p>
+    <table class="cycle-table">
+      <thead>
+        <tr>
+          <th>Döngü</th>
+          <th>Gereken Ziyaret</th>
+          <th>Sonuç</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Hoş Geldin Döngüsü</td>
+          <td>İşletme tarafından belirlenen sayı (örn. 2)</td>
+          <td>İlk ödül hakkı kazanılır</td>
+        </tr>
+        <tr>
+          <td>Standart Döngü</td>
+          <td>İşletme tarafından belirlenen sayı (örn. 4)</td>
+          <td>Sonraki ödül hakkı kazanılır</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Döngü eşik değerleri işletmeye göre farklılık gösterebilir. Güncel eşiğinizi <strong>Kartlarım</strong> sayfasından görebilirsiniz.</p>
+
+    <h3>Günlük Ziyaret Sınırı</h3>
+    <p>Her üye, aynı işletmede aynı gün içinde en fazla <strong>1 (bir)</strong> ziyaret kaydı oluşturabilir. Aynı gün içinde tekrar QR okutulması durumunda sistem ziyareti kayıt etmez ve bu durum kullanıcıya bildirilir.</p>
+
+    <h3>Ziyaret Geçerliliği</h3>
+    <p>Kaydedilen ziyaretler kalıcıdır ve döngü tamamlanmadan son kullanma tarihi uygulanmaz. Ancak üyeliğin silinmesi halinde tüm ziyaret kayıtları da silinir.</p>
+  </section>
+
+  <section id="oduller">
+    <h2><span class="num">4</span>Ödüller ve Kullanım</h2>
+
+    <h3>Ödül Hakkının Doğması</h3>
+    <p>Döngüyü tamamlayan üyenin Kartlarım sayfasında "Ödülünüz hazır!" bildirimi görünür. Ödül hakkı kullanılana kadar hesapta aktif kalır.</p>
+
+    <h3>Ödülün Kullanımı</h3>
+    <p>Ödül yalnızca üyenin kayıtlı olduğu işletmede, fiziksel mekânda ve kasiyer onayıyla kullanılabilir. Platform üzerinden uzaktan ödül kullandırımı yapılamaz.</p>
+
+    <h3>Ödülün Kapsamı</h3>
+    <p>Ödülün içeriği (ücretsiz ürün, indirim vb.) ilgili işletme tarafından belirlenir. Revizit, ödülün içeriği konusunda işletme adına taahhütte bulunmaz.</p>
+
+    <h3>Kısıtlamalar</h3>
+    <ul>
+      <li>Ödüller nakde çevrilemez.</li>
+      <li>Ödüller devredilemez veya üçüncü taraflara kullandırılamaz.</li>
+      <li>Birden fazla ödül hakkı eş zamanlı kullanılamaz.</li>
+      <li>İşletme, ödülü belirli ürün veya saatlerle sınırlı tutma hakkını saklı tutar.</li>
+    </ul>
+
+    <div class="info-box">
+      <strong>Bilgi</strong>
+      <p>Ödül kapsamı ve içeriği konusundaki tüm sorularınızı ilgili işletmeye iletmenizi öneririz. Revizit, işletme kararlarına müdahil olmamaktadır.</p>
+    </div>
+  </section>
+
+  <section id="yukumlulukler">
+    <h2><span class="num">5</span>Üyenin Yükümlülükleri</h2>
+    <p>Üye, aşağıdaki yükümlülükleri kabul etmektedir:</p>
+    <ul>
+      <li>Platforma yalnızca meşru ve dürüst yollarla erişmek,</li>
+      <li>QR kodlarını kötüye kullanmamak, çoğaltmamak veya üçüncü taraflara iletmemek,</li>
+      <li>Sistemin güvenliğini tehdit eden her türlü eylemden kaçınmak,</li>
+      <li>Başkasının telefon numarasıyla kayıt olmamak,</li>
+      <li>Platform üzerinden otomatik araçlar (bot, script vb.) kullanmamak,</li>
+      <li>Sahte ziyaret kaydı oluşturmaya yönelik girişimlerde bulunmamak.</li>
+    </ul>
+    <p>Bu yükümlülüklerin ihlali halinde üyelik askıya alınabilir ya da kalıcı olarak sonlandırılabilir. Birikmiş ödül hakları geçersiz sayılır ve iadesinde bulunulmaz.</p>
+  </section>
+
+  <section id="degisiklikler">
+    <h2><span class="num">6</span>Program Değişiklikleri</h2>
+    <p>Revizit ve işletmeler aşağıdaki hususlarda değişiklik yapma hakkını saklı tutar:</p>
+    <ul>
+      <li>Döngü eşik değerleri ve ödül içerikleri,</li>
+      <li>Günlük ziyaret sınırları,</li>
+      <li>Program kuralları ve bu Koşullar'ın herhangi bir maddesi,</li>
+      <li>Programın geçici olarak askıya alınması veya tamamen sonlandırılması.</li>
+    </ul>
+    <p>Önemli değişiklikler, yürürlüğe girmeden önce Platform üzerinden duyurulur. Değişikliğin ardından Platformu kullanmaya devam etmek, güncel koşulları kabul ettiğiniz anlamına gelir.</p>
+    <p>Programın sonlandırılması halinde mevcut ödül hakları için makul bir kullanım süresi tanınır ve bu durum üyelere bildirilir.</p>
+  </section>
+
+  <section id="sorumluluk">
+    <h2><span class="num">7</span>Sorumluluk Sınırlaması</h2>
+
+    <h3>Hizmet Kesintileri</h3>
+    <p>Revizit, sunduğu hizmetin kesintisiz ve hatasız çalışmasını garanti etmez. Teknik arızalar, bakım çalışmaları veya üçüncü taraf hizmet sağlayıcılarından kaynaklanan kesintiler nedeniyle oluşabilecek ödül kayıpları için sorumluluk üstlenilmez; ancak tespit edilen sorunlar en kısa sürede giderilmeye çalışılır.</p>
+
+    <h3>İşletme Kararları</h3>
+    <p>Revizit, işletmelerin ödül içeriği, kapsam veya koşullarıyla ilgili aldığı kararlardan sorumlu tutulamaz. Üyenin işletmeyle olan ilişkisinden doğan uyuşmazlıklar doğrudan ilgili işletmeyle çözüme kavuşturulmalıdır.</p>
+
+    <h3>Üye Hatalarından Kaynaklanan Kayıplar</h3>
+    <p>Hatalı telefon numarası girişi, cihaz kaybı veya üyenin kendi hatası nedeniyle oluşan veri kayıplarından Revizit sorumlu değildir.</p>
+  </section>
+
+  <section id="uyusmazlik">
+    <h2><span class="num">8</span>Uyuşmazlık Çözümü</h2>
+    <p>İşbu Koşullar'dan doğabilecek uyuşmazlıklarda Türkiye Cumhuriyeti hukuku uygulanır. Taraflar, uyuşmazlıkları öncelikle dostane yollarla çözmeyi taahhüt eder.</p>
+    <p>Dostane çözümün mümkün olmaması halinde, [İL] Mahkemeleri ve İcra Daireleri münhasıran yetkilidir.</p>
+    <p>Tüketici sıfatıyla sahip olduğunuz yasal haklar bu koşullardan etkilenmez. Tüketici hakları kapsamındaki şikayetlerinizi ayrıca Tüketici Hakem Heyeti'ne veya Tüketici Mahkemesi'ne iletebilirsiniz.</p>
+  </section>
+
+  <section id="iletisim">
+    <h2><span class="num">9</span>İletişim</h2>
+    <p>Kullanım koşullarına ilişkin soru ve talepleriniz için:</p>
+    <ul>
+      <li><strong>E-posta:</strong> <a href="mailto:destek@revizit.com.tr" style="color:var(--accent)">destek@revizit.com.tr</a></li>
+      <li><strong>Adres:</strong> [ŞİRKET UNVANI], [ŞİRKET ADRESİ]</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <p>© [YIL] Revizit — Tüm hakları saklıdır.</p>
+  <div class="footer-links">
+    <a href="/kvkk.html">KVKK Aydınlatma</a>
+    <a href="/gizlilik.html">Gizlilik Politikası</a>
+    <a href="/kullanim-kosullari.html" class="active">Kullanım Koşulları</a>
+    <a href="/ticari-ileti.html">Ticari İleti</a>
+  </div>
+</footer>
+
+</body>
+</html>

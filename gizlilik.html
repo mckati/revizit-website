@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gizlilik Politikası — Revizit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0c; --surface: #141414; --border: rgba(255,255,255,0.08);
+      --text: #f0ece4; --muted: #8a8078; --accent: #D4956A; --accent-dim: rgba(212,149,106,0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Lora', Georgia, serif; font-size: 15px; line-height: 1.85; min-height: 100vh; }
+    .topbar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+    .topbar-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--accent); letter-spacing: 0.04em; text-decoration: none; }
+    .topbar-back { font-size: 13px; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .topbar-back:hover { color: var(--accent); }
+    .hero { background: linear-gradient(180deg, rgba(212,149,106,0.06) 0%, transparent 100%); border-bottom: 1px solid var(--border); padding: 56px 24px 40px; text-align: center; }
+    .hero-tag { display: inline-block; background: var(--accent-dim); border: 1px solid rgba(212,149,106,0.25); color: var(--accent); border-radius: 100px; padding: 5px 16px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 5vw, 40px); font-weight: 600; line-height: 1.2; margin-bottom: 12px; }
+    .hero-meta { font-size: 13px; color: var(--muted); }
+    .container { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 48px; }
+    .toc h3 { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--accent); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 7px; }
+    .toc a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .toc a:hover { color: var(--accent); }
+    section { margin-bottom: 48px; }
+    section h2 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--text); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--border); display: flex; gap: 10px; align-items: baseline; }
+    .num { color: var(--accent); font-size: 14px; font-weight: 400; min-width: 22px; }
+    section h3 { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--accent); margin: 22px 0 10px; }
+    p { color: #c8c0b4; margin-bottom: 14px; }
+    ul { padding-left: 20px; margin-bottom: 14px; }
+    li { color: #c8c0b4; margin-bottom: 8px; }
+    .info-box { background: var(--accent-dim); border: 1px solid rgba(212,149,106,0.2); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+    .info-box strong { display: block; color: var(--accent); font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 8px; }
+    .info-box p { margin: 0; font-size: 14px; }
+    .principle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 20px 0; }
+    @media(max-width:560px) { .principle-grid { grid-template-columns: 1fr; } }
+    .principle-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+    .principle-card .icon { font-size: 20px; margin-bottom: 8px; }
+    .principle-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 15px; color: var(--text); margin-bottom: 6px; }
+    .principle-card p { font-size: 13px; margin: 0; }
+    strong { color: #e8e0d4; }
+    .footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+    .footer p { font-size: 13px; color: var(--muted); margin: 0 0 12px; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover, .footer-links a.active { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="https://www.revizit.com.tr" class="topbar-logo">Revizit</a>
+  <a href="https://app.revizit.com.tr/register.html" class="topbar-back">← Uygulamaya Dön</a>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">Yasal Bilgilendirme</div>
+  <h1>Gizlilik Politikası</h1>
+  <p class="hero-meta">Son güncelleme: [GÜN AY YIL] &nbsp;·&nbsp; 6698 sayılı KVKK ve ilgili mevzuat kapsamında hazırlanmıştır.</p>
+</div>
+
+<div class="container">
+
+  <div class="toc">
+    <h3>İçindekiler</h3>
+    <ol>
+      <li><a href="#giris">Giriş ve Kapsam</a></li>
+      <li><a href="#ilkeler">Temel Gizlilik İlkeleri</a></li>
+      <li><a href="#platform">Platformun Çalışma Yapısı</a></li>
+      <li><a href="#guvenlik">Veri Güvenliği</a></li>
+      <li><a href="#cerezler">Çerezler ve İzleme</a></li>
+      <li><a href="#cocuklar">Çocukların Gizliliği</a></li>
+      <li><a href="#degisiklikler">Politika Değişiklikleri</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+    </ol>
+  </div>
+
+  <section id="giris">
+    <h2><span class="num">1</span>Giriş ve Kapsam</h2>
+    <p>Bu Gizlilik Politikası; [ŞİRKET UNVANI] tarafından işletilen Revizit platformunun ("Platform") kullanımı sırasında kişisel verilerinizin nasıl toplandığını, işlendiğini, korunduğunu ve ne zaman silineceğini açıklamaktadır.</p>
+    <p>Bu politika; mobil web uygulaması (<strong>app.revizit.com.tr</strong>), kurumsal web sitesi (<strong>revizit.com.tr</strong>) ve entegre olduğumuz fiziksel mekânlarda sunulan sadakat hizmetleri için geçerlidir.</p>
+    <p>Platformu kullanarak bu politikayı okuduğunuzu ve içeriğini anladığınızı kabul etmektesiniz. Politikayı kabul etmiyorsanız lütfen Platformu kullanmayınız.</p>
+  </section>
+
+  <section id="ilkeler">
+    <h2><span class="num">2</span>Temel Gizlilik İlkeleri</h2>
+    <p>Revizit olarak kişisel veri işleme faaliyetlerimizde aşağıdaki temel ilkeleri benimsiyoruz:</p>
+    <div class="principle-grid">
+      <div class="principle-card">
+        <div class="icon">🎯</div>
+        <h4>Veri Minimizasyonu</h4>
+        <p>Sadece hizmetin zorunlu kıldığı verileri topluyoruz. Telefon numarası dışında kişisel veri talep etmiyoruz.</p>
+      </div>
+      <div class="principle-card">
+        <div class="icon">🔒</div>
+        <h4>Amaçla Sınırlılık</h4>
+        <p>Verileriniz yalnızca belirtilen amaçlar doğrultusunda kullanılır; başka amaçlarla işlenmez.</p>
+      </div>
+      <div class="principle-card">
+        <div class="icon">⚖️</div>
+        <h4>Şeffaflık</h4>
+        <p>Verilerinizin neden ve nasıl işlendiğini her zaman açıkça bildiririz.</p>
+      </div>
+      <div class="principle-card">
+        <div class="icon">🛡️</div>
+        <h4>Güvenlik</h4>
+        <p>Verilerinizi yetkisiz erişim, değiştirme ve imhaya karşı teknik ve idari önlemlerle koruruz.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="platform">
+    <h2><span class="num">3</span>Platformun Çalışma Yapısı</h2>
+
+    <h3>Müşteri Kayıt Akışı</h3>
+    <p>Mekân girişindeki QR kodu okutarak kayıt olduğunuzda yalnızca telefon numaranız alınır. Bu numara; sizinle iletişim kurmak için değil, sadakat döngüsünde sizi tanımlamak için kullanılır.</p>
+
+    <h3>Ziyaret Kaydı</h3>
+    <p>Her mekân ziyaretinizde kasiyer ekranında oluşturulan dinamik QR'ı okutursunuz. Bu işlem; ziyaret tarihini ve döngü ilerlemenizi kaydeder. Satın aldığınız ürünler veya harcama tutarı sisteme kaydedilmez.</p>
+
+    <h3>Ödül Takibi</h3>
+    <p>Belirlenen ziyaret eşiğine ulaştığınızda ödül hakkınız otomatik olarak aktif olur. Ödülünüzü kullandığınızda döngü sıfırlanır ve yeniden başlar.</p>
+
+    <h3>İşletme Paneli</h3>
+    <p>Mekân sahiplerine sunulan yönetim panelinde yalnızca toplu ve anonim istatistikler (günlük ziyaret sayısı, ödül kullanım oranı gibi) yer alır. Bireysel müşteri telefon numaraları panelden erişilebilir değildir.</p>
+
+    <div class="info-box">
+      <strong>Önemli</strong>
+      <p>Revizit üzerinden hiçbir ödeme işlemi gerçekleştirilmemektedir. Kredi kartı, banka hesabı veya herhangi bir finansal bilgi toplanmamaktadır.</p>
+    </div>
+  </section>
+
+  <section id="guvenlik">
+    <h2><span class="num">4</span>Veri Güvenliği</h2>
+    <p>Kişisel verilerinizi korumak için aşağıdaki teknik ve idari önlemleri uyguluyoruz:</p>
+
+    <h3>Teknik Önlemler</h3>
+    <ul>
+      <li><strong>Şifreli iletişim:</strong> Tüm veri transferleri TLS/SSL ile şifrelenmektedir.</li>
+      <li><strong>Güvenli altyapı:</strong> Veriler, ISO 27001 sertifikalı ve SOC 2 uyumlu Supabase altyapısında barındırılmaktadır.</li>
+      <li><strong>Erişim kontrolü:</strong> Personel, yalnızca görev tanımı kapsamındaki verilere erişebilir; her erişim loglanır.</li>
+      <li><strong>QR token güvenliği:</strong> Dinamik QR kodları tek kullanımlık olup 15 saniyede bir yenilenmektedir.</li>
+    </ul>
+
+    <h3>İdari Önlemler</h3>
+    <ul>
+      <li>Çalışanlar gizlilik taahhüdü imzalamaktadır.</li>
+      <li>Üçüncü taraf tedarikçilerle veri işleme sözleşmeleri imzalanmaktadır.</li>
+      <li>Güvenlik açıkları düzenli olarak değerlendirilmektedir.</li>
+    </ul>
+
+    <p>Güvenlik ihlali tespiti halinde, KVKK ve ilgili mevzuat gereği yasal süre içinde Kişisel Verileri Koruma Kurulu'na bildirimde bulunulur; ilgili kişiler de gecikmeksizin bilgilendirilir.</p>
+  </section>
+
+  <section id="cerezler">
+    <h2><span class="num">5</span>Çerezler ve İzleme</h2>
+    <p>Revizit mobil web uygulaması yalnızca zorunlu teknik verileri cihazınızda saklamaktadır:</p>
+    <ul>
+      <li><strong>Oturum verisi:</strong> Giriş durumunuzu ve tercihlerinizi korumak için tarayıcı yerel depolaması kullanılır.</li>
+      <li><strong>Telefon numarası:</strong> PWA kısayoluyla hızlı erişim için cihazınızda şifreli biçimde saklanır.</li>
+      <li><strong>Kurulum tercihi:</strong> Uygulama kurulum isteminin tekrarlanmaması için bir bayrak tutulur.</li>
+    </ul>
+    <p>Üçüncü taraf izleme çerezleri, davranışsal reklam araçları veya analitik platformlar kullanılmamaktadır.</p>
+  </section>
+
+  <section id="cocuklar">
+    <h2><span class="num">6</span>Çocukların Gizliliği</h2>
+    <p>Revizit hizmetleri 18 yaşından küçük bireylere yönelik değildir. Platformun yaş doğrulama mekanizması bulunmamakla birlikte, 18 yaş altı kullanıcılara ait kişisel veri topladığımızın farkına varılması halinde söz konusu veriler derhal silinecektir.</p>
+    <p>18 yaş altı bir bireyin platforma kayıt olduğunu düşünüyorsanız lütfen <a href="mailto:kvkk@revizit.com.tr" style="color:var(--accent)">kvkk@revizit.com.tr</a> adresine bildirin.</p>
+  </section>
+
+  <section id="degisiklikler">
+    <h2><span class="num">7</span>Politika Değişiklikleri</h2>
+    <p>Bu Gizlilik Politikası, yasal mevzuat değişiklikleri veya platform güncellemeleri doğrultusunda revize edilebilir. Önemli değişiklikler halinde:</p>
+    <ul>
+      <li>Bu sayfada güncelleme tarihi yenilenir.</li>
+      <li>Değişiklikler yürürlüğe girmeden önce Platform üzerinden duyuru yapılır.</li>
+      <li>SMS onayı bulunan kullanıcılara kısa mesaj bildirimi gönderilebilir.</li>
+    </ul>
+    <p>Değişikliğin yürürlüğe girmesinin ardından Platformu kullanmaya devam etmeniz, güncellenmiş politikayı kabul ettiğiniz anlamına gelir.</p>
+  </section>
+
+  <section id="iletisim">
+    <h2><span class="num">8</span>İletişim</h2>
+    <p>Gizlilik politikamıza ilişkin sorularınız, KVKK kapsamındaki talepleriniz veya herhangi bir endişeniz için aşağıdaki kanalları kullanabilirsiniz:</p>
+    <ul>
+      <li><strong>E-posta:</strong> <a href="mailto:kvkk@revizit.com.tr" style="color:var(--accent)">kvkk@revizit.com.tr</a></li>
+      <li><strong>Posta:</strong> [ŞİRKET UNVANI], [ŞİRKET ADRESİ] — "Gizlilik" ibaresiyle</li>
+    </ul>
+    <p>KVKK kapsamındaki resmi taleplerinizi ayrıca <a href="/kvkk.html" style="color:var(--accent)">KVKK Aydınlatma Metni</a>'ndeki başvuru yöntemleriyle iletebilirsiniz.</p>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <p>© [YIL] Revizit — Tüm hakları saklıdır.</p>
+  <div class="footer-links">
+    <a href="/kvkk.html">KVKK Aydınlatma</a>
+    <a href="/gizlilik.html" class="active">Gizlilik Politikası</a>
+    <a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+    <a href="/ticari-ileti.html">Ticari İleti</a>
+  </div>
+</footer>
+
+</body>
+</html>

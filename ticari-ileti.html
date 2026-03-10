@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Elektronik Ticari İleti Metni — Revizit</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0c0c0c; --surface: #141414; --border: rgba(255,255,255,0.08);
+      --text: #f0ece4; --muted: #8a8078; --accent: #D4956A; --accent-dim: rgba(212,149,106,0.10);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: var(--bg); color: var(--text); font-family: 'Lora', Georgia, serif; font-size: 15px; line-height: 1.85; min-height: 100vh; }
+    .topbar { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 24px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 10; }
+    .topbar-logo { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--accent); letter-spacing: 0.04em; text-decoration: none; }
+    .topbar-back { font-size: 13px; color: var(--muted); text-decoration: none; display: flex; align-items: center; gap: 6px; transition: color 0.2s; }
+    .topbar-back:hover { color: var(--accent); }
+    .hero { background: linear-gradient(180deg, rgba(212,149,106,0.06) 0%, transparent 100%); border-bottom: 1px solid var(--border); padding: 56px 24px 40px; text-align: center; }
+    .hero-tag { display: inline-block; background: var(--accent-dim); border: 1px solid rgba(212,149,106,0.25); color: var(--accent); border-radius: 100px; padding: 5px 16px; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px; }
+    .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(26px, 5vw, 40px); font-weight: 600; line-height: 1.2; margin-bottom: 12px; }
+    .hero-meta { font-size: 13px; color: var(--muted); }
+    .container { max-width: 760px; margin: 0 auto; padding: 48px 24px 80px; }
+    .toc { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px 28px; margin-bottom: 48px; }
+    .toc h3 { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--accent); margin-bottom: 14px; letter-spacing: 0.04em; }
+    .toc ol { padding-left: 20px; }
+    .toc li { margin-bottom: 7px; }
+    .toc a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .toc a:hover { color: var(--accent); }
+    section { margin-bottom: 48px; }
+    section h2 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--text); margin-bottom: 18px; padding-bottom: 12px; border-bottom: 1px solid var(--border); display: flex; gap: 10px; align-items: baseline; }
+    .num { color: var(--accent); font-size: 14px; font-weight: 400; min-width: 22px; }
+    section h3 { font-family: 'Cormorant Garamond', serif; font-size: 17px; color: var(--accent); margin: 22px 0 10px; }
+    p { color: #c8c0b4; margin-bottom: 14px; }
+    ul { padding-left: 20px; margin-bottom: 14px; }
+    li { color: #c8c0b4; margin-bottom: 8px; }
+    .info-box { background: var(--accent-dim); border: 1px solid rgba(212,149,106,0.2); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+    .info-box strong { display: block; color: var(--accent); font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 8px; }
+    .info-box p { margin: 0; font-size: 14px; }
+    .green-box { background: rgba(34,197,94,0.06); border: 1px solid rgba(34,197,94,0.2); border-radius: 12px; padding: 20px 24px; margin: 20px 0; }
+    .green-box strong { display: block; color: #86efac; font-size: 12px; letter-spacing: 0.07em; text-transform: uppercase; margin-bottom: 8px; }
+    .green-box p { margin: 0; font-size: 14px; }
+    .channel-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 16px 0; }
+    @media(max-width:560px) { .channel-grid { grid-template-columns: 1fr; } }
+    .channel-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+    .channel-card .icon { font-size: 24px; margin-bottom: 10px; }
+    .channel-card h4 { font-family: 'Cormorant Garamond', serif; font-size: 16px; color: var(--text); margin-bottom: 6px; }
+    .channel-card p { font-size: 13px; margin: 0; }
+    strong { color: #e8e0d4; }
+    .footer { border-top: 1px solid var(--border); padding: 32px 24px; text-align: center; }
+    .footer p { font-size: 13px; color: var(--muted); margin: 0 0 12px; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { font-size: 12px; color: var(--muted); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover, .footer-links a.active { color: var(--accent); }
+  </style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="https://www.revizit.com.tr" class="topbar-logo">Revizit</a>
+  <a href="https://app.revizit.com.tr/register.html" class="topbar-back">← Uygulamaya Dön</a>
+</div>
+
+<div class="hero">
+  <div class="hero-tag">Yasal Bilgilendirme</div>
+  <h1>Elektronik Ticari İleti<br>Bilgilendirme ve Onay Metni</h1>
+  <p class="hero-meta">Son güncelleme: [GÜN AY YIL] &nbsp;·&nbsp; 6563 sayılı ETK ve 6698 sayılı KVKK kapsamında hazırlanmıştır.</p>
+</div>
+
+<div class="container">
+
+  <div class="toc">
+    <h3>İçindekiler</h3>
+    <ol>
+      <li><a href="#kapsam">Kapsam ve Amaç</a></li>
+      <li><a href="#veri-sorumlusu">Veri Sorumlusu</a></li>
+      <li><a href="#islenen-veriler">İşlenen Kişisel Veriler</a></li>
+      <li><a href="#kanallar">İletişim Kanalları</a></li>
+      <li><a href="#icerik">İletilerin İçeriği</a></li>
+      <li><a href="#onay">Onay ve Geri Alma</a></li>
+      <li><a href="#haklar">Haklarınız</a></li>
+      <li><a href="#iletisim">İletişim</a></li>
+    </ol>
+  </div>
+
+  <section id="kapsam">
+    <h2><span class="num">1</span>Kapsam ve Amaç</h2>
+    <p>Bu metin; [ŞİRKET UNVANI] ("Revizit") tarafından, Revizit sadakat programı üyelerine yönelik olarak gerçekleştirilebilecek elektronik ticari ileti gönderimi faaliyetleri hakkında sizi bilgilendirmek amacıyla hazırlanmıştır.</p>
+    <p>Elektronik ticari ileti; ticari amaçlarla gönderilen her türlü kısa mesaj (SMS), anlık bildirim, e-posta ve benzeri elektronik iletişim araçlarını kapsamaktadır.</p>
+
+    <div class="green-box">
+      <strong>Rızaya Dayalı İletişim</strong>
+      <p>Revizit, onayınız olmaksızın size hiçbir ticari elektronik ileti göndermez. Bu onayı dilediğiniz zaman ve ücretsiz olarak geri alabilirsiniz.</p>
+    </div>
+  </section>
+
+  <section id="veri-sorumlusu">
+    <h2><span class="num">2</span>Veri Sorumlusu</h2>
+    <p>İşlenen kişisel veriler bakımından veri sorumlusu:</p>
+    <ul>
+      <li><strong>Unvan:</strong> [ŞİRKET UNVANI]</li>
+      <li><strong>Adres:</strong> [ŞİRKET ADRESİ]</li>
+      <li><strong>E-posta:</strong> <a href="mailto:kvkk@revizit.com.tr" style="color:var(--accent)">kvkk@revizit.com.tr</a></li>
+    </ul>
+  </section>
+
+  <section id="islenen-veriler">
+    <h2><span class="num">3</span>İşlenen Kişisel Veriler</h2>
+    <p>Ticari elektronik ileti gönderimi kapsamında yalnızca aşağıdaki kişisel verileriniz işlenmektedir:</p>
+    <ul>
+      <li><strong>İletişim verisi:</strong> Cep telefonu numarası (SMS için)</li>
+      <li><strong>İşlem verisi:</strong> İleti onay tarihi, onay kanalı ve tercihler</li>
+    </ul>
+
+    <h3>Hukuki Dayanak</h3>
+    <p>Söz konusu veriler, aşağıdaki hukuki dayanaklar çerçevesinde işlenmektedir:</p>
+    <ul>
+      <li><strong>6563 sayılı ETK m.6</strong> — Ticari elektronik ileti gönderilmesi için önceden onay alınması zorunluluğu</li>
+      <li><strong>6698 sayılı KVKK m.5/1</strong> — İlgili kişinin açık rızası</li>
+    </ul>
+
+    <h3>Aktarım</h3>
+    <p>Telefon numaranız, SMS gönderimi amacıyla yalnızca yetkili SMS hizmet sağlayıcısına (Netgsm veya muadili) aktarılmaktadır. Bu aktarım KVKK m.8 kapsamında, gerekli teknik ve hukuki önlemler alınarak gerçekleştirilmektedir. Verileriniz başka herhangi bir üçüncü tarafla paylaşılmaz.</p>
+  </section>
+
+  <section id="kanallar">
+    <h2><span class="num">4</span>İletişim Kanalları</h2>
+    <p>Revizit, onayınız dahilinde aşağıdaki kanallar üzerinden ticari elektronik ileti gönderebilir:</p>
+    <div class="channel-grid">
+      <div class="channel-card">
+        <div class="icon">💬</div>
+        <h4>SMS (Kısa Mesaj)</h4>
+        <p>Ödül bildirimleri, kampanya duyuruları ve program güncellemeleri için kullanılır.</p>
+      </div>
+      <div class="channel-card">
+        <div class="icon">🔔</div>
+        <h4>Uygulama Bildirimi</h4>
+        <p>PWA (web uygulaması) üzerinden anlık bildirim gönderimi. Cihaz izni gerektirir.</p>
+      </div>
+    </div>
+    <p>Her kanal için ayrı onay alınmaktadır. Bir kanaldan onayı geri almanız diğer kanalları etkilemez.</p>
+  </section>
+
+  <section id="icerik">
+    <h2><span class="num">5</span>İletilerin İçeriği</h2>
+    <p>Revizit sadakat programı kapsamında onaylı üyelere gönderilebilecek ticari elektronik iletiler şu konuları kapsayabilir:</p>
+    <ul>
+      <li>Ödül hakkı kazanıldığına dair bildirimler,</li>
+      <li>Döngü ilerleme hatırlatmaları,</li>
+      <li>Kayıtlı olduğunuz işletmenin kampanya ve özel günlerine dair duyurular,</li>
+      <li>Program kurallarında yapılan değişikliklere ilişkin bilgilendirmeler,</li>
+      <li>Revizit platform güncellemeleri ve yeni özellikler.</li>
+    </ul>
+
+    <div class="info-box">
+      <strong>Gönderim Sıklığı</strong>
+      <p>Ticari içerikli iletiler ayda en fazla [X] kez gönderilir. İşlemsel bildirimler (ödül kazanma, döngü tamamlama gibi) bu sınıra dahil değildir ve onay olmaksızın da gönderilebilir.</p>
+    </div>
+  </section>
+
+  <section id="onay">
+    <h2><span class="num">6</span>Onay ve Geri Alma</h2>
+
+    <h3>Onay Nasıl Verilir?</h3>
+    <p>Kayıt formunda yer alan ticari ileti onay kutucuğunu işaretleyerek onay verebilirsiniz. Onay tamamen isteğe bağlıdır; ticari ileti onayı vermemeniz sadakat programına üyeliğinizi etkilemez.</p>
+
+    <h3>Onay Nasıl Geri Alınır?</h3>
+    <p>Onayınızı dilediğiniz zaman, ücretsiz olarak ve gerekçe belirtmeksizin aşağıdaki yollardan biriyle geri alabilirsiniz:</p>
+    <ul>
+      <li>Gelen SMS'teki <strong>"İptal"</strong> veya <strong>"STOP"</strong> yanıtı göndererek,</li>
+      <li><a href="mailto:destek@revizit.com.tr" style="color:var(--accent)">destek@revizit.com.tr</a> adresine e-posta göndererek,</li>
+      <li>Platform içindeki bildirim tercihleri sayfasından (ilerleyen sürümlerde).</li>
+    </ul>
+    <p>Geri alma talebiniz, alındığı tarihten itibaren en geç <strong>3 iş günü</strong> içinde işleme alınır. Bu süre zarfında gönderilmiş olan iletiler, talebin yerine getirilmediği anlamına gelmez.</p>
+
+    <h3>Onayın Saklanması</h3>
+    <p>Verilen onay; 6563 sayılı Kanun gereğince, geri alınmasından itibaren 1 yıl boyunca kayıt altında tutulur. Bu kayıt yalnızca hukuki yükümlülük kapsamında saklanır ve başka amaçlarla kullanılmaz.</p>
+  </section>
+
+  <section id="haklar">
+    <h2><span class="num">7</span>Haklarınız</h2>
+    <p>KVKK'nın 11. maddesi ve 6563 sayılı ETK kapsamında sahip olduğunuz haklar:</p>
+    <ul>
+      <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme,</li>
+      <li>İşlenen verilerinize ilişkin bilgi talep etme,</li>
+      <li>Verilerinizin düzeltilmesini veya silinmesini talep etme,</li>
+      <li>Ticari ileti onayınızı dilediğiniz zaman geri alma,</li>
+      <li>Hukuka aykırı veri işleme nedeniyle zarara uğramanız halinde tazminat talep etme.</li>
+    </ul>
+    <p>Bu haklarınızı kullanmak için <a href="/kvkk.html" style="color:var(--accent)">KVKK Aydınlatma Metni</a>'nde belirtilen başvuru kanallarını kullanabilirsiniz.</p>
+  </section>
+
+  <section id="iletisim">
+    <h2><span class="num">8</span>İletişim</h2>
+    <p>Bu metne ilişkin sorularınız veya talepleriniz için:</p>
+    <ul>
+      <li><strong>E-posta:</strong> <a href="mailto:destek@revizit.com.tr" style="color:var(--accent)">destek@revizit.com.tr</a></li>
+      <li><strong>KVKK Başvuruları:</strong> <a href="mailto:kvkk@revizit.com.tr" style="color:var(--accent)">kvkk@revizit.com.tr</a></li>
+      <li><strong>Adres:</strong> [ŞİRKET UNVANI], [ŞİRKET ADRESİ]</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer class="footer">
+  <p>© [YIL] Revizit — Tüm hakları saklıdır.</p>
+  <div class="footer-links">
+    <a href="/kvkk.html">KVKK Aydınlatma</a>
+    <a href="/gizlilik.html">Gizlilik Politikası</a>
+    <a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+    <a href="/ticari-ileti.html" class="active">Ticari İleti</a>
+  </div>
+</footer>
+
+</body>
+</html>
