@@ -374,15 +374,25 @@
       overflow: hidden;
     }
     .pricing-top {
-      padding: 56px 56px 40px;
+      padding: 56px 56px 48px;
       border-bottom: 1px solid var(--border);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+    }
+    .pricing-left { }
+    .pricing-right {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 36px;
     }
     .pricing-lead {
       font-size: 15px;
       color: var(--muted);
       line-height: 1.85;
-      max-width: 640px;
-      margin-bottom: 40px;
+      margin-bottom: 0;
     }
     .pricing-lead strong {
       color: var(--text);
@@ -418,7 +428,8 @@
     .price-note {
       font-size: 13px;
       color: var(--muted);
-      margin-bottom: 32px;
+      margin-bottom: 28px;
+      line-height: 1.6;
     }
     .price-note span {
       color: var(--accent);
@@ -427,7 +438,7 @@
     .pricing-bottom {
       padding: 36px 56px;
       display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
       gap: 0;
     }
     .guarantee-item {
@@ -454,9 +465,9 @@
       margin-bottom: 6px;
     }
     .guarantee-desc {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--muted);
-      line-height: 1.6;
+      line-height: 1.7;
     }
     .pilot-badge {
       display: inline-flex;
@@ -469,10 +480,14 @@
       font-size: 12px;
       font-weight: 500;
       color: var(--success);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
-    @media (max-width: 700px) {
-      .pricing-top { padding: 36px 28px 32px; }
+    @media (max-width: 800px) {
+      .pricing-top {
+        grid-template-columns: 1fr;
+        gap: 36px;
+        padding: 36px 28px 32px;
+      }
       .pricing-bottom {
         grid-template-columns: 1fr;
         padding: 0;
@@ -586,7 +601,7 @@
           <div class="slider-row">
             <label>İkinci kez gelmeyen müşteri oranı <strong id="v-churn">%60</strong></label>
             <input type="range" min="20" max="80" step="5" value="60" id="s-churn" oninput="onSlider()">
-            <div class="slider-limits"><span>%20 <span style="color:var(--muted);font-size:10px">(sektör ort. ~%60)</span></span><span>%80</span></div>
+            <div class="slider-limits"><span>%20 <span style="color:var(--muted);font-size:10px">(sektör ortalaması ~%60)</span></span><span>%80</span></div>
           </div>
         </div>
       </div>
@@ -618,33 +633,34 @@
 
   <div class="pricing-wrap reveal">
     <div class="pricing-top">
-
-      <p class="pricing-lead">
-        Hesapları yaparken aklınızın bir köşesinde hep o soru vardı, değil mi?
-        <br><br>
-        <em>"Peki bunun bedeli ne olacak?"</em>
-        <br><br>
-        Aslında bu sayfaya gelirken zaten iki sorunuz vardı: <strong>"Ne sunuyorlar?"</strong> ve <strong>"Ne istiyorlar?"</strong> Birincisini gördünüz. İkincisi için dürüst olalım:
-        <br><br>
-        <strong>Revizit, işletmeniz için bir ek maliyet unsuru değil — ek gelir yaratma aracıdır.</strong>
-      </p>
-
-      <div class="pilot-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        İlk 30 gün tamamen ücretsiz
+      <div class="pricing-left">
+        <p class="pricing-lead">
+          Hesapları yaparken aklınızın bir köşesinde hep o soru vardı, değil mi?
+          <br><br>
+          <em>"Peki bunun bedeli ne olacak?"</em>
+          <br><br>
+          Aslında bu sayfaya gelirken zaten iki sorunuz vardı: <strong>"Ne sunuyorlar?"</strong> ve <strong>"Ne istiyorlar?"</strong> Birincisini gördünüz. İkincisi için dürüst olalım:
+          <br><br>
+          <strong>Revizit, işletmeniz için bir ek maliyet unsuru değil — ek gelir yaratma aracıdır.</strong>
+        </p>
       </div>
 
-      <div class="price-tag">
-        <span class="currency">₺</span>
-        <span class="amount">5.000</span>
-        <span class="period">/ ay</span>
+      <div class="pricing-right">
+        <div class="pilot-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+          İlk 30 gün tamamen ücretsiz
+        </div>
+        <div class="price-tag">
+          <span class="currency">₺</span>
+          <span class="amount">5.000</span>
+          <span class="period">/ ay</span>
+        </div>
+        <p class="price-note">
+          30 günlük ücretsiz pilot sonrası, taahhütsüz.<br>
+          <span>İstediğiniz an ayrılabilirsiniz — söylemeniz yeter.</span>
+        </p>
+        <a class="btn-primary" href="#iletisim" style="display:inline-block">Ücretsiz başlayın</a>
       </div>
-      <p class="price-note">
-        30 günlük ücretsiz pilot sonrası, taahhütsüz. &nbsp;·&nbsp;
-        <span>İstediğiniz an ayrılabilirsiniz — söylemeniz yeter.</span>
-      </p>
-
-      <a class="btn-primary" href="#iletisim" style="display:inline-block">Ücretsiz başlayın</a>
     </div>
 
     <div class="pricing-bottom">
@@ -664,7 +680,7 @@
       <span class="guarantee-strip-icon">🛡️</span>
       <div class="guarantee-strip-text">
         <strong>Değer Garantisi</strong> — Revizit, işletmenize herhangi bir ayda en az 5.000 TL ek gelir yaratmamışsa bir sonraki ay devam etmezsiniz.
-        <span>Artık biz susalım, rakamlar konuşsun.</span>
+        <br><span>Artık biz susalım, rakamlar konuşsun.</span>
       </div>
     </div>
   </div>
