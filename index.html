@@ -205,17 +205,19 @@
     .reveal-d2 { transition-delay: .2s; }
     @media (max-width: 480px) { nav { padding: 16px 20px; } .calc-left, .calc-results { padding: 32px 24px; } .contact-box { padding: 36px 24px; } footer { padding: 24px 20px; } }
     /* INTRO */
-    #revizit-intro{position:fixed;inset:0;z-index:9999;background:#f4f4f4;display:flex;align-items:center;justify-content:center;padding:60px 0}
-    #revizit-intro img{height:100%;width:auto;max-width:100%;object-fit:contain}
-    #revizit-slogan{position:fixed;inset:0;z-index:9998;background:#f4f4f4;display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none}
-    #revizit-slogan p{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,52px);font-weight:400;color:#1a1a1a;letter-spacing:6px;text-transform:lowercase}
+    #intro-overlay{position:fixed;inset:0;z-index:9999;background:#f4f4f4;display:flex;align-items:center;justify-content:center;padding:60px 0;transition:opacity 0.6s ease}
+    #intro-gif{height:100%;width:auto;max-width:100%;object-fit:contain}
+    #intro-slogan{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;opacity:0;transition:opacity 0.8s ease}
+    #intro-slogan p{font-family:'Cormorant Garamond',serif;font-size:clamp(24px,4vw,52px);font-weight:400;color:#1a1a1a;letter-spacing:6px;text-transform:lowercase}
   </style>
 </head>
 <body>
 
 <!-- INTRO -->
-<div id="revizit-intro"><img src="/revizit_profil.gif" alt="Revizit"></div>
-<div id="revizit-slogan"><p>loyalty redesigned</p></div>
+<div id="intro-overlay">
+  <img id="intro-gif" src="/revizit_profil.gif" alt="Revizit">
+  <div id="intro-slogan"><p>loyalty redesigned</p></div>
+</div>
 
 <nav>
   <a href="#" style="display:flex;align-items:center;text-decoration:none"><img src="/logo-slogan.png" alt="Revizit" style="height:56px;border-radius:8px;background:#fff;padding:5px 14px"></a>
@@ -401,27 +403,26 @@ document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el)
 <script>
 (function(){
   document.body.style.overflow='hidden';
-  var i=document.getElementById('revizit-intro'),s=document.getElementById('revizit-slogan');
+  var overlay = document.getElementById('intro-overlay');
+  var gif     = document.getElementById('intro-gif');
+  var slogan  = document.getElementById('intro-slogan');
+
   setTimeout(function(){
-    // Intro ve slogan aynı anda cross-fade
-    i.style.transition='opacity 0.6s ease';
-    i.style.opacity='0';
-    s.style.transition='opacity 0.6s ease';
-    s.style.opacity='1';
+    // GIF kaybolur, slogan belirir — overlay hep yerinde
+    gif.style.transition    = 'opacity 0.5s ease';
+    gif.style.opacity       = '0';
+    slogan.style.opacity    = '1';
+
+    // 2.5 saniye sonra overlay tamamen kaybolur, ana sayfa açılır
     setTimeout(function(){
-      i.style.display='none';
-      // 2 saniye bekle, sonra slogan bir anda kaybolsun
+      overlay.style.opacity = '0';
       setTimeout(function(){
-        s.style.transition='opacity 0s';
-        s.style.opacity='0';
-        setTimeout(function(){
-          s.style.display='none';
-          document.body.style.overflow='';
-          document.body.style.overflowX='hidden';
-        },100);
-      },2000);
-    },700);
-  },7700);
+        overlay.style.display = 'none';
+        document.body.style.overflow    = '';
+        document.body.style.overflowX   = 'hidden';
+      }, 650);
+    }, 2500);
+  }, 7700);
 })();
 </script>
 </body>
