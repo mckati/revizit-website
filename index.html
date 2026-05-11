@@ -403,15 +403,24 @@ document.querySelectorAll('.reveal').forEach(function(el) { observer.observe(el)
   document.body.style.overflow='hidden';
   var i=document.getElementById('revizit-intro'),s=document.getElementById('revizit-slogan');
   setTimeout(function(){
-    i.style.transition='opacity 0.3s ease';i.style.opacity='0';
+    // Intro ve slogan aynı anda cross-fade
+    i.style.transition='opacity 0.6s ease';
+    i.style.opacity='0';
+    s.style.transition='opacity 0.6s ease';
+    s.style.opacity='1';
     setTimeout(function(){
       i.style.display='none';
-      s.style.transition='opacity 1.2s ease';s.style.opacity='1';
+      // 2 saniye bekle, sonra slogan bir anda kaybolsun
       setTimeout(function(){
-        s.style.transition='opacity 0s';s.style.opacity='0';
-        setTimeout(function(){s.style.display='none';document.body.style.overflow='';document.body.style.overflowX='hidden';},100);
+        s.style.transition='opacity 0s';
+        s.style.opacity='0';
+        setTimeout(function(){
+          s.style.display='none';
+          document.body.style.overflow='';
+          document.body.style.overflowX='hidden';
+        },100);
       },2000);
-    },300);
+    },700);
   },7700);
 })();
 </script>
