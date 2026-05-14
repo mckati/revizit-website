@@ -168,14 +168,15 @@
     .m-sig p { font-family: 'DM Sans', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted); }
     .m-sig p span { color: var(--accent); }
     .m-btn {
+      position: fixed;
+      bottom: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
       opacity: 0;
-      transform: translateY(16px);
-      transition: opacity 0.9s ease, transform 0.9s ease;
-      margin-top: 3rem;
-      display: flex;
-      justify-content: center;
+      transition: opacity 0.9s ease;
+      z-index: 10000;
     }
-    .m-btn.mi { opacity: 1; transform: translateY(0); }
+    .m-btn.mi { opacity: 1; }
     .m-btn button {
       background: transparent;
       border: 1px solid var(--border);
@@ -191,6 +192,7 @@
       align-items: center;
       gap: 10px;
       transition: border-color .3s, color .3s;
+      white-space: nowrap;
     }
     .m-btn button:hover { border-color: var(--accent); color: var(--accent); }
     .m-btn button svg { transition: transform .3s; }
