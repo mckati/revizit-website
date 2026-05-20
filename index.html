@@ -263,10 +263,15 @@
     .btn-wa:hover { filter: brightness(1.08); }
     .btn-call { background: transparent; color: var(--text); border: 1px solid var(--border); border-radius: 14px; padding: 16px 24px; font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 400; cursor: pointer; text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 10px; transition: border-color .2s, color .2s; }
     .btn-call:hover { border-color: var(--accent); color: var(--accent); }
-    footer { border-top: 1px solid var(--border); padding: 28px 40px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
+    footer { border-top: 1px solid var(--border); padding: 24px 40px; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    footer .footer-top { width: 100%; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 12px; }
     footer .logo { font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 600; color: var(--muted); }
     footer .logo span { color: var(--accent); }
     footer p { font-size: 12px; color: var(--muted); }
+    footer .footer-legal { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+    footer .footer-legal a { font-size: 11px; color: var(--muted); text-decoration: none; opacity: 0.6; transition: opacity .2s, color .2s; }
+    footer .footer-legal a:hover { opacity: 1; color: var(--accent); }
+    footer .footer-legal span { font-size: 11px; color: var(--border); }
     .modal-overlay { display: none; position: fixed; inset: 0; z-index: 200; background: rgba(0,0,0,.8); align-items: center; justify-content: center; padding: 24px; }
     .modal-overlay.active { display: flex; }
     .modal-box { background: var(--surface); border: 1px solid var(--border); border-radius: 24px; padding: 40px 36px; max-width: 400px; width: 100%; text-align: center; }
@@ -499,8 +504,19 @@
 </div>
 
 <footer>
-  <img src="/logo-slogan.png" alt="Revizit" style="height:44px;border-radius:6px;background:#fff;padding:4px 12px;opacity:.8">
-  <p>© 2026 Revizit. Tüm hakları saklıdır.</p>
+  <div class="footer-top">
+    <img src="/logo-slogan.png" alt="Revizit" style="height:44px;border-radius:6px;background:#fff;padding:4px 12px;opacity:.8">
+    <p>© 2026 Revizit. Tüm hakları saklıdır.</p>
+  </div>
+  <div class="footer-legal">
+    <a href="/kvkk.html">KVKK Aydınlatma</a>
+    <span>·</span>
+    <a href="/gizlilik.html">Gizlilik Politikası</a>
+    <span>·</span>
+    <a href="/kullanim-kosullari.html">Kullanım Koşulları</a>
+    <span>·</span>
+    <a href="/ticari-ileti.html">Ticari İleti</a>
+  </div>
 </footer>
 
 <div class="modal-overlay" id="modal">
