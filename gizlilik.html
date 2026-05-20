@@ -62,7 +62,7 @@
 <div class="hero">
   <div class="hero-tag">Yasal Bilgilendirme</div>
   <h1>Gizlilik Politikası</h1>
-  <p class="hero-meta">Son güncelleme: [GÜN AY YIL] &nbsp;·&nbsp; 6698 sayılı KVKK ve ilgili mevzuat kapsamında hazırlanmıştır.</p>
+  <p class="hero-meta">Son güncelleme: Mayıs 2026 &nbsp;·&nbsp; 6698 sayılı KVKK ve ilgili mevzuat kapsamında hazırlanmıştır.</p>
 </div>
 
 <div class="container">
@@ -83,7 +83,7 @@
 
   <section id="giris">
     <h2><span class="num">1</span>Giriş ve Kapsam</h2>
-    <p>Bu Gizlilik Politikası; [ŞİRKET UNVANI] tarafından işletilen Revizit platformunun ("Platform") kullanımı sırasında kişisel verilerinizin nasıl toplandığını, işlendiğini, korunduğunu ve ne zaman silineceğini açıklamaktadır.</p>
+    <p>Bu Gizlilik Politikası; Hülya Katı tarafından işletilen Revizit platformunun ("Platform") kullanımı sırasında kişisel verilerinizin nasıl toplandığını, işlendiğini, korunduğunu ve ne zaman silineceğini açıklamaktadır.</p>
     <p>Bu politika; mobil web uygulaması (<strong>app.revizit.com.tr</strong>), kurumsal web sitesi (<strong>revizit.com.tr</strong>) ve entegre olduğumuz fiziksel mekânlarda sunulan sadakat hizmetleri için geçerlidir.</p>
     <p>Platformu kullanarak bu politikayı okuduğunuzu ve içeriğini anladığınızı kabul etmektesiniz. Politikayı kabul etmiyorsanız lütfen Platformu kullanmayınız.</p>
   </section>
@@ -143,19 +143,20 @@
     <h3>Teknik Önlemler</h3>
     <ul>
       <li><strong>Şifreli iletişim:</strong> Tüm veri transferleri TLS/SSL ile şifrelenmektedir.</li>
-      <li><strong>Güvenli altyapı:</strong> Veriler, ISO 27001 sertifikalı ve SOC 2 uyumlu Supabase altyapısında barındırılmaktadır.</li>
-      <li><strong>Erişim kontrolü:</strong> Personel, yalnızca görev tanımı kapsamındaki verilere erişebilir; her erişim loglanır.</li>
-      <li><strong>QR token güvenliği:</strong> Dinamik QR kodları tek kullanımlık olup 15 saniyede bir yenilenmektedir.</li>
+      <li><strong>Güvenli altyapı:</strong> Veriler, SOC 2 uyumlu Supabase altyapısında (AWS EU Frankfurt) barındırılmaktadır.</li>
+      <li><strong>Erişim kontrolü:</strong> Satır düzeyinde güvenlik (RLS) politikaları ile yetkisiz veri erişimi engellenmektedir.</li>
+      <li><strong>PIN güvenliği:</strong> Ödül kullanımı için oluşturulan PIN'ler SHA-256 ile hashlenerek saklanmakta; düz metin olarak tutulmamaktadır.</li>
+      <li><strong>QR token güvenliği:</strong> Dinamik QR kodları tek kullanımlık olup kısa aralıklarla yenilenmektedir.</li>
     </ul>
 
     <h3>İdari Önlemler</h3>
     <ul>
-      <li>Çalışanlar gizlilik taahhüdü imzalamaktadır.</li>
-      <li>Üçüncü taraf tedarikçilerle veri işleme sözleşmeleri imzalanmaktadır.</li>
+      <li>Üçüncü taraf tedarikçilerle veri işleme sözleşmeleri (DPA) imzalanmaktadır.</li>
       <li>Güvenlik açıkları düzenli olarak değerlendirilmektedir.</li>
+      <li>API anahtarları ve erişim bilgileri çevresel değişken olarak saklanmakta, kaynak kodda yer almamaktadır.</li>
     </ul>
 
-    <p>Güvenlik ihlali tespiti halinde, KVKK ve ilgili mevzuat gereği yasal süre içinde Kişisel Verileri Koruma Kurulu'na bildirimde bulunulur; ilgili kişiler de gecikmeksizin bilgilendirilir.</p>
+    <p>Güvenlik ihlali tespiti halinde, KVKK ve ilgili mevzuat gereği 72 saat içinde Kişisel Verileri Koruma Kurulu'na bildirimde bulunulur; etkilenen kullanıcılar da gecikmeksizin bilgilendirilir.</p>
   </section>
 
   <section id="cerezler">
@@ -163,7 +164,7 @@
     <p>Revizit mobil web uygulaması yalnızca zorunlu teknik verileri cihazınızda saklamaktadır:</p>
     <ul>
       <li><strong>Oturum verisi:</strong> Giriş durumunuzu ve tercihlerinizi korumak için tarayıcı yerel depolaması kullanılır.</li>
-      <li><strong>Telefon numarası:</strong> PWA kısayoluyla hızlı erişim için cihazınızda şifreli biçimde saklanır.</li>
+      <li><strong>Telefon numarası:</strong> PWA kısayoluyla hızlı erişim için cihazınızda saklanır.</li>
       <li><strong>Kurulum tercihi:</strong> Uygulama kurulum isteminin tekrarlanmaması için bir bayrak tutulur.</li>
     </ul>
     <p>Üçüncü taraf izleme çerezleri, davranışsal reklam araçları veya analitik platformlar kullanılmamaktadır.</p>
@@ -191,7 +192,7 @@
     <p>Gizlilik politikamıza ilişkin sorularınız, KVKK kapsamındaki talepleriniz veya herhangi bir endişeniz için aşağıdaki kanalları kullanabilirsiniz:</p>
     <ul>
       <li><strong>E-posta:</strong> <a href="mailto:kvkk@revizit.com.tr" style="color:var(--accent)">kvkk@revizit.com.tr</a></li>
-      <li><strong>Posta:</strong> [ŞİRKET UNVANI], [ŞİRKET ADRESİ] — "Gizlilik" ibaresiyle</li>
+      <li><strong>Posta:</strong> Hülya Katı, Yenişehir Mah. Demokrasi Cad. No:4 İzmit/KOCAELİ — "Gizlilik" ibaresiyle</li>
     </ul>
     <p>KVKK kapsamındaki resmi taleplerinizi ayrıca <a href="/kvkk.html" style="color:var(--accent)">KVKK Aydınlatma Metni</a>'ndeki başvuru yöntemleriyle iletebilirsiniz.</p>
   </section>
@@ -199,7 +200,7 @@
 </div>
 
 <footer class="footer">
-  <p>© [YIL] Revizit — Tüm hakları saklıdır.</p>
+  <p>© 2026 Revizit — Tüm hakları saklıdır.</p>
   <div class="footer-links">
     <a href="/kvkk.html">KVKK Aydınlatma</a>
     <a href="/gizlilik.html" class="active">Gizlilik Politikası</a>
