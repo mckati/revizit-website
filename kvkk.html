@@ -6,6 +6,7 @@
   <title>KVKK Aydınlatma Metni — Revizit</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <style>
     :root {
       --bg: #0c0c0c; --surface: #141414; --border: rgba(255,255,255,0.08);
@@ -81,29 +82,30 @@
 
   <section id="veri-sorumlusu">
     <h2><span class="num">1</span>Veri Sorumlusu</h2>
-    <p>İşbu Aydınlatma Metni; 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") ve ilgili mevzuat uyarınca, Revizit sadakat platformu ("Platform") aracılığıyla sunulan hizmetler kapsamında kişisel verilerinizi işleyen veri sorumlusu tarafından hazırlanmıştır.</p>
+    <p id="vsGirisMetni">İşbu Aydınlatma Metni; 6698 sayılı Kişisel Verilerin Korunması Kanunu ("KVKK") ve ilgili mevzuat uyarınca, Revizit sadakat platformu ("Platform") aracılığıyla sunulan hizmetler kapsamında kişisel verilerinizi işleyen veri sorumlusu tarafından hazırlanmıştır.</p>
     <div class="contact-box">
       <div class="contact-row">
         <span class="c-label">Veri Sorumlusu</span>
-        <span class="c-val">Hülya Katı</span>
+        <span class="c-val" id="vsUnvan">Hülya Katı</span>
       </div>
       <div class="contact-row">
         <span class="c-label">Adres</span>
-        <span class="c-val">Yenişehir Mah. Demokrasi Cad. No:4 İzmit/KOCAELİ</span>
+        <span class="c-val" id="vsAdres">Yenişehir Mah. Demokrasi Cad. No:4 İzmit/KOCAELİ</span>
       </div>
       <div class="contact-row">
         <span class="c-label">E-posta</span>
-        <span class="c-val"><a href="mailto:contact@revizit.com.tr">contact@revizit.com.tr</a></span>
+        <span class="c-val" id="vsEposta"><a href="mailto:contact@revizit.com.tr">contact@revizit.com.tr</a></span>
       </div>
-      <div class="contact-row">
+      <div class="contact-row" id="vsTelefonRow">
         <span class="c-label">Telefon</span>
-        <span class="c-val">0850 307 78 98</span>
+        <span class="c-val" id="vsTelefon">0850 307 78 98</span>
       </div>
-      <div class="contact-row">
+      <div class="contact-row" id="vsKepRow">
         <span class="c-label">KEP</span>
         <span class="c-val">hulya.kati.1@hs01.kep.tr</span>
       </div>
     </div>
+    <p id="vsIsleyenNot" style="display:none;margin-top:16px;">Revizit (Hülya Katı), yukarıdaki veri sorumlusunun talimatları doğrultusunda Platform'un teknik altyapısını sağlayan <strong>veri işleyen</strong> sıfatıyla hareket etmektedir. Veri işleyen sıfatıyla Revizit'e ait iletişim bilgileri: <a href="mailto:contact@revizit.com.tr">contact@revizit.com.tr</a>, 0850 307 78 98.</p>
   </section>
 
   <section id="toplanan-veriler">
@@ -257,6 +259,47 @@
     <a href="/ticari-ileti.html">Ticari İleti</a>
   </div>
 </footer>
+
+<script>
+  // Business context varsa (register-flow'dan geliniyorsa) ve kafenin yasal
+  // kimlik alanları doluysa, veri sorumlusu olarak kafeyi göster.
+  // Yoksa (genel site ziyaretçisi veya alanlar henüz boş) varsayılan
+  // Hülya Katı/Revizit içeriği aynen kalır — bkz. HTML'deki statik değerler.
+  const SUPABASE_URL  = 'https://wrhrztnnvzcewprrasng.supabase.co';
+  const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndyaHJ6dG5udnpjZXdwcnJhc25nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwNDQ4NzYsImV4cCI6MjA4ODYyMDg3Nn0.yZkDPf2CYxMFUF_q73_wAarj1DuqaIQXPY0VzyAvRXo';
+
+  (async () => {
+    const businessId = new URLSearchParams(location.search).get('business');
+    if (!businessId) return;
+
+    try {
+      const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
+      const { data, error } = await sb
+        .from('businesses')
+        .select('legal_unvan, legal_address, legal_email, owner_phone')
+        .eq('id', businessId)
+        .maybeSingle();
+
+      if (error || !data || !data.legal_unvan) return; // alanlar boşsa varsayılan (Hülya Katı) kalır
+
+      document.getElementById('vsUnvan').textContent = data.legal_unvan;
+      if (data.legal_address) document.getElementById('vsAdres').textContent = data.legal_address;
+      if (data.legal_email) {
+        document.getElementById('vsEposta').innerHTML =
+          `<a href="mailto:${data.legal_email}">${data.legal_email}</a>`;
+      }
+      if (data.owner_phone) {
+        document.getElementById('vsTelefon').textContent = data.owner_phone;
+      } else {
+        document.getElementById('vsTelefonRow').style.display = 'none';
+      }
+      document.getElementById('vsKepRow').style.display = 'none'; // kafenin KEP'i yok
+      document.getElementById('vsIsleyenNot').style.display = 'block';
+    } catch (e) {
+      // Sorgu başarısız olursa sayfa varsayılan (Hülya Katı) içerikle kalır — kullanıcı yine de aydınlatılmış olur.
+    }
+  })();
+</script>
 
 </body>
 </html>
