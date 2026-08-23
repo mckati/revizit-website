@@ -159,14 +159,11 @@
     <h2><span class="num">4</span>Kişisel Verilerin Aktarımı</h2>
     <p>Kişisel verileriniz aşağıdaki taraflarla KVKK'nın 8. ve 9. maddelerindeki kurallara uygun biçimde paylaşılabilmektedir:</p>
 
-    <h3>Veritabanı ve Kimlik Doğrulama — Supabase Inc.</h3>
-    <p>Platform'un teknik altyapısını sağlayan Supabase Inc. ile çalışılmaktadır. Veriler AWS EU (Frankfurt) altyapısında barındırılmaktadır. Bu kapsamda yurt dışına aktarım, veri işleyenle imzalanan veri işleme sözleşmesi ve gerekli teknik/idari güvenlik önlemleri çerçevesinde, hizmetin ifası için zorunlu olan verilerle sınırlı olarak gerçekleştirilmektedir.</p>
+    <h3>Veritabanı, Kimlik Doğrulama ve Hosting Altyapısı — Radore Veri Merkezi (Türkiye)</h3>
+    <p>Platform'un teknik altyapısı (veritabanı, kimlik doğrulama, web uygulaması ve kurumsal sayfaların barındırılması) bu alanda Türkiye'nin güvenilir isimlerinden olan ve ISO 9001 (Kalite Yönetim Sistemi), ISO 27001 (Bilgi Güvenliği Yönetim Sistemi), ISO 22301 (İş Sürekliliği Yönetim Sistemi), ISO 50001 (Enerji Yönetim Sistemi), PCI-DSS Sertifikaları (PCI Veri Güvenliği Standardı) ile standartlarını kanıtlayan Radore Veri Merkezi Hizmetleri A.Ş.'ye ait sunucularda, kendi yönetimimizdeki bir kurulum üzerinde çalışmaktadır. Verileriniz yurt dışına aktarılmamaktadır.</p>
 
-    <h3>Hosting ve Altyapı — Netlify Inc.</h3>
-    <p>Platform'un web uygulaması ve kurumsal sayfaları Netlify Inc. üzerinde barındırılmaktadır. Netlify, HTTP istek logları kapsamında geçici IP adresi bilgisini işleyebilir; bu veriler kişisel kimlik tespitinde kullanılmamaktadır. Bu aktarım, Netlify'ın standart hizmet şartları kapsamındaki veri güvenliği taahhütleri çerçevesinde gerçekleştirilmektedir.</p>
-
-    <h3>E-posta Bildirimleri — Resend Inc.</h3>
-    <p>İşletme sahiplerine gönderilen sistemsel e-postalar (günlük raporlar, bildirimler) için Resend Inc. ile çalışılmaktadır. Bu süreçte yalnızca işletme sahibinin e-posta adresi aktarılmakta olup platform üyelerine ait kişisel veriler Resend aracılığıyla işlenmemektedir.</p>
+    <h3>E-posta Bildirimleri — Zoho Corporation</h3>
+    <p>İşletme sahiplerine gönderilen sistemsel e-postalar (günlük raporlar, bildirimler, hesap kurulum linkleri) için Zoho SMTP hizmeti ile çalışılmaktadır. Bu süreçte yalnızca işletme sahibinin e-posta adresi aktarılmakta olup platform üyelerine ait kişisel veriler bu kanal üzerinden işlenmemektedir.</p>
 
     <h3>WhatsApp Business Mesajları — Meta Platforms Inc.</h3>
     <p>Kampanya ve ödül bildirimleri için Meta Cloud API (WhatsApp Business) kullanılmaktadır. Bu kapsamda yalnızca telefon numarası aktarılmaktadır. Meta ile ayrı bir veri işleme sözleşmesi (DPA) imzalanmamıştır; aktarım, WhatsApp Business API'nin standart kullanım şartları çerçevesinde gerçekleştirilmektedir.</p>
@@ -261,8 +258,8 @@
   // kimlik alanları doluysa, veri sorumlusu olarak kafeyi göster.
   // Yoksa (genel site ziyaretçisi veya alanlar henüz boş) varsayılan
   // Hülya Katı/Revizit içeriği aynen kalır — bkz. HTML'deki statik değerler.
-  const SUPABASE_URL  = 'https://wrhrztnnvzcewprrasng.supabase.co';
-  const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndyaHJ6dG5udnpjZXdwcnJhc25nIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzMwNDQ4NzYsImV4cCI6MjA4ODYyMDg3Nn0.yZkDPf2CYxMFUF_q73_wAarj1DuqaIQXPY0VzyAvRXo';
+  const SUPABASE_URL  = 'https://db.revizit.com.tr';
+  const SUPABASE_ANON = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJyb2xlIjoiYW5vbiIsImlzcyI6InN1cGFiYXNlIiwiaWF0IjoxNzg1OTcyMTY1LCJleHAiOjE5NDM2NTIxNjV9.2Tv_RADKEf3_2EbKISQxn7DKdBtDkBxQN9jzyQge3Rw';
 
   (async () => {
     const businessId = new URLSearchParams(location.search).get('business');
