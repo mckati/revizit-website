@@ -96,10 +96,6 @@
         <span class="c-label">E-posta</span>
         <span class="c-val" id="vsEposta"></span>
       </div>
-      <div class="contact-row" id="vsTelefonRow" style="display:none">
-        <span class="c-label">Telefon</span>
-        <span class="c-val" id="vsTelefon"></span>
-      </div>
     </div>
     <p id="vsVarsayilanNot" style="margin-top:16px;">İşletmenin unvan ve iletişim bilgileri, kayıt sırasında size gösterilen aydınlatma metni bağlantısında yer alır. Bu bilgilere ulaşamıyorsanız başvurularınızı Revizit'e iletebilirsiniz.</p>
     <div class="contact-box" style="margin-top:16px;">
@@ -284,7 +280,7 @@
       const sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON);
       const { data, error } = await sb
         .from('businesses')
-        .select('legal_unvan, legal_address, legal_email, owner_phone')
+        .select('legal_unvan, legal_address, legal_email')
         .eq('id', businessId)
         .maybeSingle();
 
@@ -303,10 +299,6 @@
         holder.textContent = '';
         holder.appendChild(a);
         document.getElementById('vsEpostaRow').style.display = '';
-      }
-      if (data.owner_phone) {
-        document.getElementById('vsTelefon').textContent = data.owner_phone;
-        document.getElementById('vsTelefonRow').style.display = '';
       }
       document.getElementById('vsVarsayilanNot').style.display = 'none';
     } catch (e) {
